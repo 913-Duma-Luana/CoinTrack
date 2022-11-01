@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEditEntryActivity"
+    android:background="@color/light_purple">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabBackground="@drawable/tabs_selector"
+        app:layout_constraintVertical_weight="1"
+        android:layout_margin="30dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPENSE"
+            android:background="@color/medium_purple"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INCOME"
+            android:background="@color/medium_purple"
+            />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <TextView
+        android:id="@+id/categoryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick a category for your entry"
+        android:layout_below="@id/tabLayout"
+        android:textAlignment="center"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/white"
+        android:layout_below="@id/categoryText"
+        />
+
+    <EditText
+        android:id="@+id/editEntryTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/spinner"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:hint="Enter entry title"
+        android:textColor="@color/black"
+        android:textColorHint="@color/medium_purple"
+        app:backgroundTint="@color/white" />
+
+    <EditText
+        android:id="@+id/editEntrySum"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Enter entry sum"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textColorHint="@color/medium_purple"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_below="@+id/editEntryTitle"
+        android:background="@color/white"
+        app:backgroundTint="@color/white"/>
+
+    <EditText
+        android:id="@+id/editEntryDetails"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Enter entry details"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/medium_purple"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:layout_below="@+id/editEntrySum"/>
+
+    <Button
+        android:id="@+id/datePickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick a date and time"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_below="@+id/editEntryDetails"
+        android:layout_marginLeft="20dp"
+        android:layout_centerInParent="true">
+    </Button>
+
+    <TextView
+        android:id="@+id/dateShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/datePickerButton"
+        android:textColor="@color/black"
+        tools:text="@tools:sample/date/ddmmyy"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        >
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateButton"
+        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="Save Changes"
+        android:backgroundTint="@color/dark_purple"/>
+
+
+</RelativeLayout>
